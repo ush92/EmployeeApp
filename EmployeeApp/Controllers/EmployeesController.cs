@@ -51,7 +51,7 @@ namespace EmployeeApp.Controllers
         {
             var file = HttpContext.Request.Form.Files;
             if (file.Count() > 0)
-            {//@"wwwroot/"
+            {
                 string ImageName = Guid.NewGuid().ToString() + Path.GetExtension(file[0].FileName);
                 var filestream = new FileStream(Path.Combine(env.WebRootPath, "Images", ImageName), FileMode.Create);
                 file[0].CopyTo(filestream);
